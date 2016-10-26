@@ -105,7 +105,7 @@ var app = app || {};
 					 <div className="pure-u-1-2">
 						 800 g
 
-					 <button className="destroy" onClick={this.props.onDestroy} />
+					 
 					 </div>
 				</div>
 
