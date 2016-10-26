@@ -95,6 +95,22 @@
         position: absolute;
       }
 
+      .editing .view {
+        display: none;
+      }
+
+      .view {
+        display: block;
+      }
+
+      .editing .edit {
+        display: block;
+      }
+      .edit {
+        display: none;
+      }
+
+
       .calculated-height {
       height: -webkit-calc(100% - 100px);
       height:    -moz-calc(100% - 100px);
@@ -105,6 +121,7 @@
       width:    -moz-calc(100% - 550px);
       width:         calc(100% - 550px);
       }​
+
 
 
 
@@ -152,7 +169,7 @@
 
 
 
-           <div id="list" class="">
+           <div  class="list">
 
                <div class="ingredient-item ingredient-item-selected pure-g">
                    <div class="pure-u-1-2" style="  font-size: 14px;font-weight: bold;">
@@ -166,7 +183,7 @@
 
 
 
-                              <button class="add-ingridient-button pure-button">Add Ingredient</button>
+              <button class="add-ingridient-button pure-button">Add Ingredient</button>
 
 
                <div class="ingredient-item  pure-g">
@@ -254,36 +271,30 @@
                      3 g
                    </div>
                </div>
+           </div>
 
+           <div id="list" class="todoapp"></div>
 
-               <section class="todoapp"></section>
+           <!-- <footer class="info">
+             <p>Double-click to edit a todo</p>
+             <p>Created by <a href="http://github.com/petehunt/">petehunt</a></p>
+             <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+           </footer> -->
 
-               <!-- <footer class="info">
-                 <p>Double-click to edit a todo</p>
-                 <p>Created by <a href="http://github.com/petehunt/">petehunt</a></p>
-                 <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-               </footer> -->
+           <script src="node_modules/todomvc-common/base.js"></script>
+           <script src="node_modules/react/dist/react-with-addons.js"></script>
+           <script src="node_modules/classnames/index.js"></script>
+           <script src="node_modules/react/dist/JSXTransformer.js"></script>
+           <script src="node_modules/director/build/director.js"></script>
 
-               <script src="node_modules/todomvc-common/base.js"></script>
-               <script src="node_modules/react/dist/react-with-addons.js"></script>
-               <script src="node_modules/classnames/index.js"></script>
-               <script src="node_modules/react/dist/JSXTransformer.js"></script>
-               <script src="node_modules/director/build/director.js"></script>
-
-               <script src="js/utils.js"></script>
-               <script src="js/todoModel.js"></script>
-               <!-- jsx is an optional syntactic sugar that transforms methods in React's
-               `render` into an HTML-looking format. Since the two models above are
-               unrelated to React, we didn't need those transforms. -->
-               <script type="text/jsx" src="js/todoItem.jsx"></script>
-               <script type="text/jsx" src="js/footer.jsx"></script>
-               <script type="text/jsx" src="js/app.jsx"></script>
-
-
-
-
-               </div>
-
+           <script src="js/utils.js"></script>
+           <script src="js/todoModel.js"></script>
+           <!-- jsx is an optional syntactic sugar that transforms methods in React's
+           `render` into an HTML-looking format. Since the two models above are
+           unrelated to React, we didn't need those transforms. -->
+           <script type="text/jsx" src="js/todoItem.jsx"></script>
+           <script type="text/jsx" src="js/footer.jsx"></script>
+           <script type="text/jsx" src="js/app.jsx"></script>
 
 
              <div class="label">Preperation</div>

@@ -133,37 +133,36 @@ var app = app || {};
 
 			if (todos.length) {
 				main = (
-					<section className="main">
-						<input
-							className="toggle-all"
-							type="checkbox"
-							onChange={this.toggleAll}
-							checked={activeTodoCount === 0}
-						/>
-						<ul className="todo-list">
-							{todoItems}
-						</ul>
-					</section>
+
+				 			 {todoItems}
+
 				);
 			}
 
 			return (
-				<div>
+
 					<header className="header">
-					
+
 						{main}
-						<input
-							className="new-todo"
-							placeholder="What needs to be done?"
-							value={this.state.newTodo}
-							onKeyDown={this.handleNewTodoKeyDown}
-							onChange={this.handleChange}
-							autoFocus={true}
-						/>
+
+						<div className="ingredient-item  pure-g">
+								<div class="pure-u-1-2">
+									<input
+										className="new-todo"
+										placeholder="What ingredient to add?"
+										value={this.state.newTodo}
+										onKeyDown={this.handleNewTodoKeyDown}
+										onChange={this.handleChange}
+										autoFocus={true}
+									/>
+								</div>
+
+							
+						</div>
+
 					</header>
 
-					{footer}
-				</div>
+
 			);
 		}
 	});
