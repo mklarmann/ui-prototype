@@ -149,7 +149,7 @@ var app = app || {};
 								<div class="pure-u-1-2">
 									<input
 										className="new-todo"
-										placeholder="What ingredient to add?"
+										placeholder="Add new ingredient"
 										value={this.state.newTodo}
 										onKeyDown={this.handleNewTodoKeyDown}
 										onChange={this.handleChange}
@@ -157,7 +157,7 @@ var app = app || {};
 									/>
 								</div>
 
-							
+
 						</div>
 
 					</header>

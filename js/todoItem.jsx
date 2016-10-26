@@ -78,13 +78,14 @@ var app = app || {};
 		render: function () {
 			return (
 
+				<div className={classNames({
+					completed: this.props.todo.completed,
+					editing: this.props.editing,
+				})}>
 				<div className="ingredient-item  pure-g">
 					 <div className="pure-u-1-2">
 
-		 				<div className={classNames({
-		 					completed: this.props.todo.completed,
-		 					editing: this.props.editing
-		 				})}>
+
 		 					<div className="view">
 		 						<label onClick={this.handleEdit}>
 		 							{this.props.todo.title}
@@ -99,16 +100,16 @@ var app = app || {};
 		 						onChange={this.handleChange}
 		 						onKeyDown={this.handleKeyDown}
 		 					/>
-					</div>
+
 					 </div>
 
 					 <div className="pure-u-1-2">
 						 800 g
 
-					 
+
 					 </div>
 				</div>
-
+</div>
 
 			);
 		}
