@@ -124,6 +124,12 @@
       text-align: right;
     }
 
+    .ingredient-item:hover {
+      border-left: 6px solid #1b98f8;
+      /*padding: 0.8em 1em;*/
+      background: #f2f2f4;
+    }
+
 
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
@@ -141,7 +147,7 @@
     /* These are position:fixed; elements that will be in the left 500px of the screen */
 
     #recipe {
-        border-bottom: 1px solid #ddd;
+        /*border-bottom: 1px solid #ddd;*/
         width: auto; /* so that it's not 100% */
         padding-left: 100px;
     }
@@ -185,6 +191,19 @@
   width: 184px;
   z-index: 4;
 }
+
+.ingredient-item .actions {
+  display: none;
+}
+
+.ingredient-item:hover .actions {
+  display: block;
+  -webkit-animation: fade-in .3s linear 1, move-up .3s linear 1;
+  -moz-animation: fade-in .3s linear 1, move-up .3s linear 1;
+  -ms-animation: fade-in .3s linear 1, move-up .3s linear 1;
+}
+
+
 .qs .popover:before {
   border-top: 12px solid rgba(184, 190, 196, 0.9);
   border-right: 12px solid transparent;
