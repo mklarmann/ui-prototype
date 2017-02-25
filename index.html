@@ -412,35 +412,169 @@
 
         <div class="preview p-content" style="background: #f3f7f2;height:1000px; padding:12px;width:460px;">
 
-          <div class="ingredient-content">
-              <div class="ingredient-content-header pure-g">
-                  <div class="pure-u-1-2">
-                      <h1 class="ingredient-content-title">Tomato</h1>
+          <div id="recipe" style="padding: 20px 0px 20px 140px; background: #fff0fc; margin-right:16px;">
 
-                  </div>
+            <div id="recipe-info">
+              <div id="icon" style="width:80px;">
+                 <img class="pure-img" style="padding:4px;height:80px;float:left;margin-left:-110px;margin-top:-20px;background: #fff;border-radius: 60px;border: 1px solid #ddd;" src="./img/spoon-fork.png" alt="html5">
+               </div>
+              <h1>Pumpkin Salad</h1>
+              <div id="image">
+                  <img class="pure-img" style="height:300px;float:right;margin-top:-200px;margin-right:20px; margin-bottom:20px;" src="./img/pumpkin-salad.jpeg" alt="html5">
+               </div>
+
+              <div class="label">Recipe</div>
+              <div class="label">Nutrition</div>
+              <div class="label">CO2-value</div>
+
+            </div>
 
 
+
+
+            <div  class="list">
+
+                <div class="ingredient-item ingredient-item-selected pure-g">
+                    <div class="pure-u-1-2" style="  font-size: 14px;font-weight: bold;">
+                        Ingredients
+                    </div>
+
+                    <div class="pure-u-1-2">
+
+                    </div>
+                </div>
+
+
+
+               <!-- <button class="add-ingridient-button pure-button">Add Ingredient</button> -->
+
+
+                <div class="ingredient-item  pure-g">
+                    <div class="pure-u-1-2">
+                      Pumpkin
+                    </div>
+
+                    <div class="pure-u-1-2">
+                      800 g
+                    </div>
+                </div>
+
+                <div class="ingredient-item pure-g">
+                    <div class="pure-u-1-2">
+                      Walnut oil
+                    </div>
+
+                    <div class="pure-u-1-2">
+                      2 Spoons
+                    </div>
+                </div>
+
+                <div class="ingredient-item  pure-g">
+                    <div class="pure-u-1-2">
+                        Balsamic vinegar
+                    </div>
+
+                    <div class="pure-u-1-2">
+                      30 g
+                    </div>
+                </div>
+
+                <form class="pure-form">
+                <div class="ingredient-item-unread ingredient-item pure-g">
+
+                    <div class="pure-u-1-2">
+
+                      <span class="qs">
+
+                     <input type="ingredient" placeholder="Sesam">
+                     <span class="popover above">
+                       <span style="background: rgba(253, 246, 227, 0.85);">Sesam</span><br />
+                       Sesamöl<br />
+                       Retro Sesam (scharz)<br />
+                       Krisesamoli Topfspflanze<br />
+                       </span></span>
+
+
+                    </div>
+
+                    <div class="pure-u-1-2">
+                      <input type="ingredient" placeholder="30" size="1">
+                       g
+                    </div>
+
+                </div>
+                </form>
+
+                <div class="ingredient-item  pure-g">
+                    <div class="pure-u-1-2">
+                        Parsley
+                    </div>
+
+                    <div class="pure-u-1-2">
+                      10 g
+                    </div>
+                </div>
+
+                <div class="ingredient-item  pure-g">
+                    <div class="pure-u-1-2">
+                        Salt
+                    </div>
+
+                    <div class="pure-u-1-2">
+                      3 g
+                    </div>
+                </div>
+
+                <div class="ingredient-item  pure-g">
+                    <div class="pure-u-1-2">
+                      Pepper
+                    </div>
+
+                    <div class="pure-u-1-2">
+                      3 g
+                    </div>
+                </div>
+            </div>
+
+            <div id="list" class="todoapp"></div>
+
+            <!-- <footer class="info">
+              <p>Double-click to edit a todo</p>
+              <p>Created by <a href="http://github.com/petehunt/">petehunt</a></p>
+              <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+            </footer> -->
+
+            <script src="node_modules/todomvc-common/base.js"></script>
+            <script src="node_modules/react/dist/react-with-addons.js"></script>
+            <script src="node_modules/classnames/index.js"></script>
+            <script src="node_modules/react/dist/JSXTransformer.js"></script>
+            <script src="node_modules/director/build/director.js"></script>
+
+            <script src="js/utils.js"></script>
+            <script src="js/todoModel.js"></script>
+            <!-- jsx is an optional syntactic sugar that transforms methods in React's
+            `render` into an HTML-looking format. Since the two models above are
+            unrelated to React, we didn't need those transforms. -->
+            <script type="text/jsx" src="js/todoItem.jsx"></script>
+            <script type="text/jsx" src="js/footer.jsx"></script>
+            <script type="text/jsx" src="js/app.jsx"></script>
+
+
+              <div class="label">Preperation</div>
+              <div id="preperation">
+
+                <p>1. Preheat the oven to 180 ºC. Clean the pumpkin and remove seeds and skin. Cut into cubes of about 1.5 cm. Note: There are some types of pumpkin you can eat with their skin such as butternut.</p>
+
+                <p>2. Place the pumpkin cubes onto a baking tray and bake for about 15 minutes. Remove the tray and let the cubes cool down.</p>
+
+                <p>3. Chop up the parsley. Toast the sesame seeds in the pan until fragrant. Mix all the remaining ingredients with the pumpkin cubes. Serve and enjoy.</p>
+
+                <p>GOOD TO KNOW: We love it with spelt cous cous and a fried egg sunny side up. That's very delicious healthy fast food for you!</p>
               </div>
 
-              <div class="ingredient-content-body">
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <p>
-                      Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </p>
-                  <p>
-                      Aliquam ac feugiat dolor. Proin mattis massa sit amet enim iaculis tincidunt. Mauris tempor mi vitae sem aliquet pharetra. Fusce in dui purus, nec malesuada mauris. Curabitur ornare arcu quis mi blandit laoreet. Vivamus imperdiet fermentum mauris, ac posuere urna tempor at. Duis pellentesque justo ac sapien aliquet egestas. Morbi enim mi, porta eget ullamcorper at, pharetra id lorem.
-                  </p>
-                  <p>
-                      Donec sagittis dolor ut quam pharetra pretium varius in nibh. Suspendisse potenti. Donec imperdiet, velit vel adipiscing bibendum, leo eros tristique augue, eu rutrum lacus sapien vel quam. Nam orci arcu, luctus quis vestibulum ut, ullamcorper ut enim. Morbi semper erat quis orci aliquet condimentum. Nam interdum mauris sed massa dignissim rhoncus.
-                  </p>
-                  <p>
-                      Regards,<br>
-                      Manuel
-                  </p>
-              </div>
           </div>
+
+
 
 
         </div>
