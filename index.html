@@ -50,19 +50,19 @@
 
         position:relative;
         top:0px;
-        left: -webkit-calc(100% - 500px);
+        left: 280px;
       }
       .preview {
-        width:500px;
+        width: -webkit-calc(100% - 314px);  min-width:600px;
       }
 
       @media all and (max-width: 940px) {
           #element{
               margin-left: 0px;
-              left: 440px;
+              left: 270px;
           }
           .preview {
-              width: -webkit-calc(100% - 468px);
+              width: -webkit-calc(100% - 268px);
           }
       }
 
@@ -93,10 +93,10 @@
 
 
       .calculated-width-2 {
-      width: -webkit-calc(100% - 250px);
+      /*width: -webkit-calc(100% - 250px);
       width:    -moz-calc(100% - 250px);
       width:         calc(100% - 250px);
-      min-width:150px;
+      min-width:150px;*/
       }​
 
       .calculated-height {
@@ -105,9 +105,10 @@
       height:         calc(100% - 60px);
       }
       .calculated-width {
-      width: -webkit-calc(100% - 550px);
+        width:240px;
+      /*width: -webkit-calc(100% - 550px);
       width:    -moz-calc(100% - 550px);
-      width:         calc(100% - 550px);
+      width:         calc(100% - 550px);*/
       }​
 
 
@@ -121,296 +122,301 @@
 
 
 
+  <div class="calculated-width header-left" style="background: #f2f2f4;position:fixed;top:0px;height:21px;padding:12px; width:240px;">
 
 
-<div class="calculated-width header-left" style="background: #f2f2f4;position:fixed;height:21px;padding:12px; width: -webkit-calc(100% - 550px);min-width:400px;">
+    <div style="font-size:20px;font-weight:300;margin-top:-2px;"><a> [ H ] </a></div>
 
 
-  <div style="font-size:20px;font-weight:300;margin-top:-2px;"><a> [ Import ] </a></div>
 
+      <form class="pure-form calculated-width" style="float:left; margin-left:50px;margin-top:-25px;width:100%;height:0px;">
+           <input  class="calculated-width-2" type="ingredient" placeholder="Search here" style="padding:4px;">
+      </form>
 
 
-    <form class="pure-form calculated-width" style="float:left; margin-left:100px;margin-top:-25px;width:100%;height:0px;">
-         <input  class="calculated-width-2" type="ingredient" placeholder="Search here" style="padding:4px;">
-    </form>
+    <!-- <div style="float:right; margin-top:-24px; margin-right:10px; font-size:20px;font-weight:300; "><a> [ Add New ] </a></div> -->
 
 
-  <div style="float:right; margin-top:-24px; margin-right:10px; font-size:20px;font-weight:300; "><a> [ Add New ] </a></div>
 
+  </div>
 
+  <div class="calculated-height calculated-width mydiv" style="overflow: auto;height: -webkit-calc(100% - 100px);width:280px;">
+   <!-- Results -->
 
-</div>
+           <div id="recipe" style="padding: 20px 0px 20px 20px; background: #fff0fc; margin-right:16px;">
 
-<div class="calculated-height calculated-width mydiv" style="overflow-y: scroll;width: -webkit-calc(100% - 510px);  min-width:440px; ">
 
- <!-- Results -->
+             <div id="list" class="">
 
-         <div id="recipe" style="padding: 20px 0px 20px 140px; background: #fff0fc; margin-right:16px;">
 
 
-           <div id="list" class="">
 
 
+                 <div class="ingredient-item-selected pure-g">
+                     <div class="pure-u-1-2" style="  font-size: 14px;font-weight: bold;">
+                         Plans
+                     </div>
 
+                     <div class="pure-u-1-2">
 
+                     </div>
+                 </div>
 
-               <div class="ingredient-item-selected pure-g">
-                   <div class="pure-u-1-2" style="  font-size: 14px;font-weight: bold;">
-                       Plans
-                   </div>
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                       Pumpkin
 
-                   <div class="pure-u-1-2">
 
-                   </div>
-               </div>
 
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                     Pumpkin
+                     </div>
 
+                     <div class="pure-u-1-2">
 
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
 
-                   </div>
 
-                   <div class="pure-u-1-2">
+                     </div>
+                 </div>
 
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
+                 <div class="ingredient-item pure-g">
+                     <div class="pure-u-1-2">
+                       Walnut oil
+                     </div>
 
+                     <div class="pure-u-1-2">
 
-                   </div>
-               </div>
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
 
-               <div class="ingredient-item pure-g">
-                   <div class="pure-u-1-2">
-                     Walnut oil
-                   </div>
+                     </div>
+                 </div>
 
-                   <div class="pure-u-1-2">
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                         Balsamic vinegar
+                     </div>
 
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
+                     <div class="pure-u-1-2">
 
-                   </div>
-               </div>
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
 
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                       Balsamic vinegar
-                   </div>
 
-                   <div class="pure-u-1-2">
+                     </div>
+                 </div>
 
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
+                 <div class="ingredient-item pure-g">
 
+                     <div class="pure-u-1-2">
 
-                   </div>
-               </div>
+                       <span class="qs">
 
-               <div class="ingredient-item pure-g">
+                      Sesame
+                    </span>
 
-                   <div class="pure-u-1-2">
 
-                     <span class="qs">
+                     </div>
+
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+
+                 </div>
+                 </form>
+
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                         Parsley
+                     </div>
+
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+                 </div>
+
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                         Salt
+                     </div>
+
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+                 </div>
+
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                       Pepper
+                     </div>
+
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+                 </div>
+
+                 </div>
+
+           </div>
+
+
+
+
+           <div id="recipe" style="padding: 20px 0px 20px 20px; background: #fff0fc; margin-right:16px; margin-top:-40px">
+
+
+             <div id="list" class="">
+
+                 <div class="ingredient-item-selected pure-g">
+                     <div class="pure-u-1-2" style="  font-size: 14px;font-weight: bold;">
+                         Recipes
+                     </div>
+
+                     <div class="pure-u-1-2">
+
+                     </div>
+                 </div>
+
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                       Pumpkin
+                     </div>
+
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+                 </div>
+
+                 <div class="ingredient-item pure-g">
+                     <div class="pure-u-1-2">
+                       Walnut oil
+                     </div>
 
-                    Sesame
-                  </span>
-
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+                 </div>
 
-                   </div>
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                         Balsamic vinegar
+                     </div>
 
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-
-               </div>
-               </form>
-
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                       Parsley
-                   </div>
-
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-               </div>
-
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                       Salt
-                   </div>
-
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-               </div>
-
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                     Pepper
-                   </div>
-
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-               </div>
-
-               </div>
-
-         </div>
-
-
-
-
-         <div id="recipe" style="padding: 20px 0px 20px 140px; background: #fff0fc; margin-right:16px; margin-top:-40px">
-
-
-           <div id="list" class="">
-
-               <div class="ingredient-item-selected pure-g">
-                   <div class="pure-u-1-2" style="  font-size: 14px;font-weight: bold;">
-                       Recipes
-                   </div>
-
-                   <div class="pure-u-1-2">
-
-                   </div>
-               </div>
-
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                     Pumpkin
-                   </div>
-
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-               </div>
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+                 </div>
 
-               <div class="ingredient-item pure-g">
-                   <div class="pure-u-1-2">
-                     Walnut oil
-                   </div>
+                 <div class="ingredient-item pure-g">
 
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-               </div>
+                     <div class="pure-u-1-2">
+                      Sesame
+                     </div>
 
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                       Balsamic vinegar
-                   </div>
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
 
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-               </div>
+                 </div>
+                 </form>
 
-               <div class="ingredient-item pure-g">
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                         Parsley
+                     </div>
 
-                   <div class="pure-u-1-2">
-                    Sesame
-                   </div>
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+                 </div>
 
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                         Salt
+                     </div>
 
-               </div>
-               </form>
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+                 </div>
 
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                       Parsley
-                   </div>
+                 <div class="ingredient-item  pure-g">
+                     <div class="pure-u-1-2">
+                       Pepper
+                     </div>
 
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-               </div>
+                     <div class="pure-u-1-2">
+                       <span class="actions">
+                         <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a>
+                         </div>
+                        </span>
+                     </div>
+                 </div>
 
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                       Salt
-                   </div>
+                 </div>
 
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-               </div>
+           </div>
 
-               <div class="ingredient-item  pure-g">
-                   <div class="pure-u-1-2">
-                     Pepper
-                   </div>
 
-                   <div class="pure-u-1-2">
-                     <span class="actions">
-                       <div style="background: #f2f2f4;font-size:16px;font-weight:300;padding:0px; "><a> [ Open ] </a> – <a> [ Copy Link ] </a>
-                       </div>
-                      </span>
-                   </div>
-               </div>
+           <!-- Results -->
 
-               </div>
 
-         </div>
 
+  </div>
 
-         <!-- Results -->
+  <div class="footer-left calculated-width" style="background: #f0f8f4;position:fixed;bottom:0px;height:21px;padding:12px;width:240px;">
 
+        <div  style="font-size:20px;font-weight:300;"><a style="color:green;">[ Add New ]</a></div>
 
+        <!-- <div  style="float:right; margin-top:-23px; margin-right:10px; font-size:20px;font-weight:300;"><a style="color:green;">[ Add New Plan ]</a></div> -->
 
-</div>
+  </div>
 
 
 
+<div id="element" style="overflow: auto;height: -webkit-calc(100% - 50px); width: -webkit-calc(100% - 290px);  min-width:600px;margin-top:50px;background: #f202f4;">
 
-<div id="element" style="overflow: auto;height: -webkit-calc(100% - 50px); width:500px;margin-top:50px;">
-
-        <div class="preview" style="background: #f2f2f4;font-size:20px;font-weight:300;padding:12px; position:fixed; top: -2px; "><a href="" href="./edit.html" onclick="window.open('./edit.html','name','width=600,height=600')"> [ Open ] </a> – <a> [ Copy Link ] </a>
+        <div class="preview" style="background: #f2f2f4;font-size:20px;font-weight:300;padding:12px; position:fixed; top: -2px; ">
+          <a href="" href="./edit.html" onclick="window.open('./edit.html','name','width=600,height=600')"> [ Print ] </a>
         </div>
 
-        <div class="preview p-content" style="background: #f3f7f2;height:1000px; padding:12px;width:460px;">
+        <div class="preview p-content" style="background: #f3f7f2;height:1000px; padding:12px;width: -webkit-calc(100% - 20px);  min-width:720px;">
 
           <div id="recipe" style="padding: 20px 0px 20px 140px; background: #fff0fc; margin-right:16px;">
 
@@ -578,6 +584,8 @@
 
 
         </div>
+
+</div>
 
 </div>
 
