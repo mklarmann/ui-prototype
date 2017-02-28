@@ -3,88 +3,92 @@
  * This layout consists of three main elements, `#nav` (navigation bar), `#list` (ingredient list), and `#main` (ingredient content). All 3 elements are within `#layout`
  */
 
-#layout,#list {
-  margin: 0;
-  padding: 0;
+#layout, #list {
+    margin: 0;
+    padding: 0;
 }
+
 
 /*
  * -- ingredient STYLES --
  * Styles relevant to the ingredient messages, labels, counts, and more.
  */
 
+
 /* ingredient Item Styles */
 
 .ingredient-item {
-  padding: 0.9em 1em;
-  border-bottom: 1px solid #ddd;
-  border-left: 6px solid transparent;
-  white-space: nowrap;
+    padding: 0.9em 1em;
+    border-bottom: 1px solid #ddd;
+    border-left: 6px solid transparent;
+    white-space: nowrap;
 }
 
 .ingredient-name {
-  margin: 0;
+    margin: 0;
 }
 
 .ingredient-name {
-  text-transform: uppercase;
-  color: #999;
+    text-transform: uppercase;
+    color: #999;
 }
 
 .ingredient-item-selected {
-  background: #eee;
-  padding: 0.2em 1em;
-  margin-left: -124px;
-  padding-left: 124px;
-  border-top: 1px solid #ddd;
+    background: #eee;
+    padding: 0.2em 1em;
+    margin-left: -124px;
+    padding-left: 124px;
+    border-top: 1px solid #ddd;
 }
 
 .ingredient-item-unread {
-  border-left: 6px solid #1b98f8;
-  padding: 0.8em 1em;
-  background: #f2f2f4;
+    border-left: 6px solid #1b98f8;
+    padding: 0.8em 1em;
+    background: #f2f2f4;
 }
 
 .ingredient-item-unread input {
-  margin-left: -4px;
+    margin-left: -4px;
 }
+
 
 /* ingredient Content Styles */
 
-.ingredient-content-header,.ingredient-content-body,.ingredient-content-footer {
-  padding: 1em 2em;
+.ingredient-content-header, .ingredient-content-body, .ingredient-content-footer {
+    padding: 1em 2em;
 }
 
 .ingredient-content-header {
-  border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .ingredient-content-title {
-  margin: 0.5em 0 0;
+    margin: 0.5em 0 0;
 }
 
 .add-ingridient-button {
-  margin-bottom: 0.3em;
-  margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    margin-top: 0.3em;
 }
 
 .label {
-  margin-top: 40px;
-  margin-bottom: -60px;
-  height: 40px;
-  padding: 4px;
-  margin-left: -118px;
-  font-weight: bold;
-  font-size: 14px;
-  width: 100px;
-  text-align: right;
+    margin-top: 40px;
+    margin-bottom: -60px;
+    height: 40px;
+    padding: 4px;
+    margin-left: -118px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 100px;
+    text-align: right;
 }
 
 .ingredient-item:hover {
-  border-left: 6px solid #1b98f8;
-  /*padding: 0.8em 1em;*/
-  background: #f2f2f4;
+    border-left: 6px solid #1b98f8;
+    /*padding: 0.8em 1em;*/
+    background: #f2f2f4;
 }
+
 
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
@@ -93,149 +97,142 @@
  */
 
 @media (min-width: 40em) {
-  /* Move the layout over so we can fit the nav + list in on the left */
-
-  #layout {
-    position: relative;
-  }
-
-  /* These are position:fixed; elements that will be in the left 500px of the screen */
-
-  #recipe {
-    /*border-bottom: 1px solid #ddd;*/
-    width: auto;
-    /* so that it's not 100% */
-    padding-left: 100px;
-  }
+    /* Move the layout over so we can fit the nav + list in on the left */
+    #layout {
+        position: relative;
+    }
+    /* These are position:fixed; elements that will be in the left 500px of the screen */
+    #recipe {
+        /*border-bottom: 1px solid #ddd;*/
+        width: auto;
+        /* so that it's not 100% */
+        padding-left: 100px;
+    }
 }
+
 
 /*
  * -- POPUP --
  * The small thing that pops-up
  */
 
+
 /* The element to hover over */
 
 .qs {
-  /*background-color: #02bdda;*/
-  /*border-radius: 16px;*/
-  /*color: #e3fbff;*/
-  cursor: default;
-  display: inline-block;
-  /*font-family: 'Helvetica',sans-serif;
+    /*background-color: #02bdda;*/
+    /*border-radius: 16px;*/
+    /*color: #e3fbff;*/
+    cursor: default;
+    display: inline-block;
+    /*font-family: 'Helvetica',sans-serif;
   font-size: 18px;
   font-weight: bold;*/
-  /*height: 30px;*/
-  /*line-height: 30px;*/
-  position: relative;
-  /*text-align: center;*/
-  /*width: 30px;*/
+    /*height: 30px;*/
+    /*line-height: 30px;*/
+    position: relative;
+    /*text-align: center;*/
+    /*width: 30px;*/
 }
 
 .qs .popover {
-  /*background-color: rgba(0, 0, 0, 0.85);*/
-  background: #f2f2f4;
-  border-radius: 5px;
-  bottom: 42px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-  /*color: #fff;*/
-  display: none;
-  font-size: 14px;
-  line-height: 2em;
-  font-family: 'Helvetica',sans-serif;
-  left: -22px;
-  padding: 7px 10px;
-  position: absolute;
-  width: 184px;
-  z-index: 4;
+    /*background-color: rgba(0, 0, 0, 0.85);*/
+    background: #f2f2f4;
+    border-radius: 5px;
+    bottom: 42px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    /*color: #fff;*/
+    display: none;
+    font-size: 14px;
+    line-height: 2em;
+    font-family: 'Helvetica', sans-serif;
+    left: -22px;
+    padding: 7px 10px;
+    position: absolute;
+    width: 184px;
+    z-index: 4;
 }
 
 .ingredient-item .actions {
-  display: none;
+    display: none;
 }
 
 .ingredient-item:hover .actions {
-  display: block;
-  -webkit-animation: fade-in .3s linear 1, move-up .3s linear 1;
-  -moz-animation: fade-in .3s linear 1, move-up .3s linear 1;
-  -ms-animation: fade-in .3s linear 1, move-up .3s linear 1;
+    display: block;
+    -webkit-animation: fade-in .3s linear 1, move-up .3s linear 1;
+    -moz-animation: fade-in .3s linear 1, move-up .3s linear 1;
+    -ms-animation: fade-in .3s linear 1, move-up .3s linear 1;
 }
 
 .qs .popover:before {
-  border-top: 12px solid rgba(184, 190, 196, 0.9);
-  border-right: 12px solid transparent;
-  border-left: 12px solid transparent;
-  bottom: -12px;
-  content: '';
-  display: block;
-  left: 50%;
-  margin-left: -12px;
-  position: absolute;
+    border-top: 12px solid rgba(184, 190, 196, 0.9);
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    bottom: -12px;
+    content: '';
+    display: block;
+    left: 50%;
+    margin-left: -12px;
+    position: absolute;
 }
 
 .qs:hover .popover {
-  display: block;
-  -webkit-animation: fade-in .3s linear 1, move-up .3s linear 1;
-  -moz-animation: fade-in .3s linear 1, move-up .3s linear 1;
-  -ms-animation: fade-in .3s linear 1, move-up .3s linear 1;
+    display: block;
+    -webkit-animation: fade-in .3s linear 1, move-up .3s linear 1;
+    -moz-animation: fade-in .3s linear 1, move-up .3s linear 1;
+    -ms-animation: fade-in .3s linear 1, move-up .3s linear 1;
 }
 
 @-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @-moz-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @-ms-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @-webkit-keyframes move-up {
-  from {
-    bottom: 30px;
-  }
-
-  to {
-    bottom: 42px;
-  }
+    from {
+        bottom: 30px;
+    }
+    to {
+        bottom: 42px;
+    }
 }
 
 @-moz-keyframes move-up {
-  from {
-    bottom: 30px;
-  }
-
-  to {
-    bottom: 42px;
-  }
+    from {
+        bottom: 30px;
+    }
+    to {
+        bottom: 42px;
+    }
 }
 
 @-ms-keyframes move-up {
-  from {
-    bottom: 30px;
-  }
-
-  to {
-    bottom: 42px;
-  }
+    from {
+        bottom: 30px;
+    }
+    to {
+        bottom: 42px;
+    }
 }
