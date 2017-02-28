@@ -1,5 +1,3 @@
-
-
 /*
  * -- LAYOUT STYLES --
  * This layout consists of three main elements, `#nav` (navigation bar), `#list` (ingredient list), and `#main` (ingredient content). All 3 elements are within `#layout`
@@ -155,7 +153,10 @@
 }
 
 
-
+/*
+ * -- POPUP --
+ * The small thing that pops-up
+ */
 
 
 /* The element to hover over */
