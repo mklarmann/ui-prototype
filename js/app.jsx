@@ -8,31 +8,32 @@ var app = app || {};
 (function () {
 	'use strict';
 
-	app.ALL_TODOS = 'all';
-	app.ACTIVE_TODOS = 'active';
-	app.COMPLETED_TODOS = 'completed';
-	var TodoFooter = app.TodoFooter;
+	app.LISTS = 'listview';
+	app.PROJECTS = 'projectview';
 	var TodoItem = app.TodoItem;
+	var ListItem = app.ListItem;
+	var ProjectItem = app.ProjectItem;
 
 	var ENTER_KEY = 13;
 
 	var TodoApp = React.createClass({
 		getInitialState: function () {
 			return {
-				nowShowing: app.ALL_TODOS,
+				nowShowing: app.LISTS,
 				editing: null,
-				newTodo: ''
+				newTodo: '',
+				newList: '',
+				newProject: ''
 			};
 		},
 
 		componentDidMount: function () {
 			var setState = this.setState;
 			var router = Router({
-				'/': setState.bind(this, {nowShowing: app.ALL_TODOS}),
-				'/active': setState.bind(this, {nowShowing: app.ACTIVE_TODOS}),
-				'/completed': setState.bind(this, {nowShowing: app.COMPLETED_TODOS})
+				'/projects': setState.bind(this, {nowShowing: app.PROJECTS}),
+				'/lists': setState.bind(this, {nowShowing: app.LISTS})
 			});
-			router.init('/');
+			router.init('/lists');
 		},
 
 		handleChange: function (event) {
@@ -40,27 +41,32 @@ var app = app || {};
 		},
 
 		handleNewTodoKeyDown: function (event) {
-			if (event.keyCode !== ENTER_KEY) {
+			if (event.keyCode == ENTER_KEY) {
+
+				event.preventDefault();
+
+				var val = this.state.newTodo.trim();
+
+				if (val) {
+					this.props.model.addTodo(val);
+					this.setState({newTodo: ''});
+				}
+
+			} else if (event.keyCode == BACKSPACE_KEY) {
+
+				event.preventDefault();
+
+				var val = this.state.newTodo.trim();
+
+				if (val == '') {
+					this.props.model.destroyTodo();
+					// TODO
+					this.setState({newTodo: ''});
+				}
+
+			} else {
 				return;
 			}
-
-			event.preventDefault();
-
-			var val = this.state.newTodo.trim();
-
-			if (val) {
-				this.props.model.addTodo(val);
-				this.setState({newTodo: ''});
-			}
-		},
-
-		toggleAll: function (event) {
-			var checked = event.target.checked;
-			this.props.model.toggleAll(checked);
-		},
-
-		toggle: function (todoToToggle) {
-			this.props.model.toggle(todoToToggle);
 		},
 
 		destroy: function (todo) {
@@ -80,14 +86,11 @@ var app = app || {};
 			this.setState({editing: null});
 		},
 
-		clearCompleted: function () {
-			this.props.model.clearCompleted();
-		},
-
 		render: function () {
-			var footer;
 			var main;
 			var todos = this.props.model.todos;
+			var lists = this.props.model.lists;
+			var projects = this.props.model.projects;
 
 			var shownTodos = todos.filter(function (todo) {
 				switch (this.state.nowShowing) {
@@ -114,22 +117,6 @@ var app = app || {};
 					/>
 				);
 			}, this);
-
-			var activeTodoCount = todos.reduce(function (accum, todo) {
-				return todo.completed ? accum : accum + 1;
-			}, 0);
-
-			var completedCount = todos.length - activeTodoCount;
-
-			if (activeTodoCount || completedCount) {
-				footer =
-					<TodoFooter
-						count={activeTodoCount}
-						completedCount={completedCount}
-						nowShowing={this.state.nowShowing}
-						onClearCompleted={this.clearCompleted}
-					/>;
-			}
 
 			if (todos.length) {
 				main = (
