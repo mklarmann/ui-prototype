@@ -15,7 +15,7 @@ var app = app || {};
 	// separate out parts of your application.
 	app.TodoModel = function (key) {
 		this.key = key;
-		this.todos = Utils.store(key);
+		this.projects = Utils.store(key);
 		this.onChanges = [];
 	};
 
@@ -24,8 +24,26 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.inform = function () {
-		Utils.store(this.key, this.todos);
+		Utils.store(this.key, this.projects);
 		this.onChanges.forEach(function (cb) { cb(); });
+	};
+
+	app.TodoModel.prototype.addProject = function (title) {
+		this.projects = this.projects.concat({
+			id: Utils.uuid(),
+			title: title
+		});
+
+		this.inform();
+	};
+
+	app.TodoModel.prototype.addList = function (title) {
+		this.lists = this.lists.concat({
+			id: Utils.uuid(),
+			title: title
+		});
+
+		this.inform();
 	};
 
 	app.TodoModel.prototype.addTodo = function (title) {
@@ -38,29 +56,7 @@ var app = app || {};
 		this.inform();
 	};
 
-	app.TodoModel.prototype.toggleAll = function (checked) {
-		// Note: it's usually better to use immutable data structures since they're
-		// easier to reason about and React works very well with them. That's why
-		// we use map() and filter() everywhere instead of mutating the array or
-		// todo items themselves.
-		this.todos = this.todos.map(function (todo) {
-			return Utils.extend({}, todo, {completed: checked});
-		});
-
-		this.inform();
-	};
-
-	app.TodoModel.prototype.toggle = function (todoToToggle) {
-		this.todos = this.todos.map(function (todo) {
-			return todo !== todoToToggle ?
-				todo :
-				Utils.extend({}, todo, {completed: !todo.completed});
-		});
-
-		this.inform();
-	};
-
-	app.TodoModel.prototype.destroy = function (todo) {
+	app.TodoModel.prototype.destroyTodo = function (todo) {
 		this.todos = this.todos.filter(function (candidate) {
 			return candidate !== todo;
 		});
@@ -68,7 +64,23 @@ var app = app || {};
 		this.inform();
 	};
 
-	app.TodoModel.prototype.save = function (todoToSave, text) {
+	app.TodoModel.prototype.destroyList = function (list) {
+		this.lists = this.lists.filter(function (candidate) {
+			return candidate !== list;
+		});
+
+		this.inform();
+	};
+
+	app.TodoModel.prototype.destroyProject = function (project) {
+		this.projects = this.projects.filter(function (candidate) {
+			return candidate !== project;
+		});
+
+		this.inform();
+	};
+
+	app.TodoModel.prototype.saveTodo = function (todoToSave, text) {
 		this.todos = this.todos.map(function (todo) {
 			return todo !== todoToSave ? todo : Utils.extend({}, todo, {title: text});
 		});
@@ -76,12 +88,21 @@ var app = app || {};
 		this.inform();
 	};
 
-	app.TodoModel.prototype.clearCompleted = function () {
-		this.todos = this.todos.filter(function (todo) {
-			return !todo.completed;
+	app.TodoModel.prototype.saveList = function (listToSave, text) {
+		this.lists = this.lists.map(function (list) {
+			return list !== listToSave ? list : Utils.extend({}, list, {title: text});
 		});
 
 		this.inform();
 	};
+
+	app.TodoModel.prototype.saveProject = function (projectToSave, text) {
+		this.projects = this.projects.map(function (project) {
+			return project !== projectToSave ? project : Utils.extend({}, project, {title: text});
+		});
+
+		this.inform();
+	};
+
 
 })();

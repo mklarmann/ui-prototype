@@ -167,7 +167,7 @@ var app = app || {};
 		}
 	});
 
-	var model = new app.TodoModel('react-todos');
+	var model = new app.TodoModel('eaternity-react');
 
 	function render() {
 		React.render(
