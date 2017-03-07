@@ -19,7 +19,7 @@ var app = app || {};
 	var DOWN_ARROW_KEY = 40;
 	var COLON_KEY = 186;
 
-	app.TodoItem = React.createClass({
+	app.ListItem = React.createClass({
 		handleSubmit: function (event) {
 			var val = this.state.editText.trim();
 			if (val) {
@@ -32,12 +32,12 @@ var app = app || {};
 
 		handleEdit: function () {
 			this.props.onEdit();
-			this.setState({editText: this.props.todo.title});
+			this.setState({editText: this.props.list.title});
 		},
 
 		handleKeyDown: function (event) {
 			if (event.which === ESCAPE_KEY) {
-				this.setState({editText: this.props.todo.title});
+				this.setState({editText: this.props.list.title});
 				this.props.onCancel(event);
 			} else if (event.which === ENTER_KEY) {
 				this.handleSubmit(event);
@@ -51,7 +51,7 @@ var app = app || {};
 		},
 
 		getInitialState: function () {
-			return {editText: this.props.todo.title};
+			return {editText: this.props.list.title};
 		},
 
 		/**
@@ -63,7 +63,7 @@ var app = app || {};
 		 */
 		shouldComponentUpdate: function (nextProps, nextState) {
 			return (
-				nextProps.todo !== this.props.todo ||
+				nextProps.list !== this.props.list ||
 				nextProps.editing !== this.props.editing ||
 				nextState.editText !== this.state.editText
 			);
@@ -87,7 +87,7 @@ var app = app || {};
 			return (
 
 				<div className={classNames({
-					completed: this.props.todo.completed,
+					completed: this.props.list.completed,
 					editing: this.props.editing,
 				})}>
 				<div className="ingredient-item  pure-g">
@@ -96,7 +96,7 @@ var app = app || {};
 
 		 					<div className="view">
 		 						<label onClick={this.handleEdit}>
-		 							{this.props.todo.title}
+		 							{this.props.list.title}
 		 						</label>
 
 		 					</div>

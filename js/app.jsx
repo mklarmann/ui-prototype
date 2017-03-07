@@ -172,7 +172,7 @@ var app = app || {};
 	function render() {
 		React.render(
 			<TodoApp model={model}/>,
-			document.getElementsByClassName('todoapp')[0]
+			document.getElementsByClassName('eaternity-app')[0]
 		);
 	}
 

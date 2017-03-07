@@ -37,18 +37,20 @@ var app = app || {};
 		this.inform();
 	};
 
-	app.TodoModel.prototype.addList = function (title) {
+	app.TodoModel.prototype.addList = function (title,projectId) {
 		this.lists = this.lists.concat({
 			id: Utils.uuid(),
+			projectId: projectId,
 			title: title
 		});
 
 		this.inform();
 	};
 
-	app.TodoModel.prototype.addTodo = function (title) {
+	app.TodoModel.prototype.addTodo = function (title,listID) {
 		this.todos = this.todos.concat({
 			id: Utils.uuid(),
+			listId: listId,
 			title: title,
 			completed: false
 		});
