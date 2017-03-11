@@ -15,9 +15,10 @@ var app = app || {};
 	// separate out parts of your application.
 	app.TodoModel = function (key) {
 		this.key = key;
-		this.projects = Utils.store(key);
-		this.lists = [];
-		this.todos = [];
+		this.store = Utils.store(key);
+		this.projects =  this.store.projects || [];
+		this.lists = this.store.lists || [];
+		this.todos =  this.store.todos || [];
 		this.onChanges = [];
 	};
 
