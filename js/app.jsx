@@ -54,7 +54,7 @@ var app = app || {};
 
 			} else if (event.keyCode == BACKSPACE_KEY) {
 
-				event.preventDefault();
+				// event.preventDefault();
 
 				var val = this.state.newTodo.trim();
 
@@ -93,13 +93,7 @@ var app = app || {};
 			var projects = this.props.model.projects;
 
 			var shownTodos = todos.filter(function (todo) {
-				switch (this.state.nowShowing) {
-				case app.ACTIVE_TODOS:
-					return !todo.completed;
-				case app.COMPLETED_TODOS:
-					return todo.completed;
-				default:
-					return true;
+					if (todo.listId == this.newList) { return true; }
 				}
 			}, this);
 

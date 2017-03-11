@@ -16,6 +16,8 @@ var app = app || {};
 	app.TodoModel = function (key) {
 		this.key = key;
 		this.projects = Utils.store(key);
+		this.lists = [];
+		this.todos = [];
 		this.onChanges = [];
 	};
 
@@ -47,10 +49,11 @@ var app = app || {};
 		this.inform();
 	};
 
-	app.TodoModel.prototype.addTodo = function (title,listID) {
+	app.TodoModel.prototype.addTodo = function (title,listID,projectId) {
 		this.todos = this.todos.concat({
 			id: Utils.uuid(),
 			listId: listId,
+			projectId: projectId,
 			title: title,
 			completed: false
 		});
