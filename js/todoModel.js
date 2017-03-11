@@ -49,7 +49,7 @@ var app = app || {};
 		this.inform();
 	};
 
-	app.TodoModel.prototype.addTodo = function (title,listID,projectId) {
+	app.TodoModel.prototype.addTodo = function (title,listId,projectId) {
 		this.todos = this.todos.concat({
 			id: Utils.uuid(),
 			listId: listId,

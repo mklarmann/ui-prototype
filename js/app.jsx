@@ -15,6 +15,7 @@ var app = app || {};
 	var ProjectItem = app.ProjectItem;
 
 	var ENTER_KEY = 13;
+	var BACKSPACE_KEY =	8;
 
 	var TodoApp = React.createClass({
 		getInitialState: function () {
@@ -48,13 +49,13 @@ var app = app || {};
 				var val = this.state.newTodo.trim();
 
 				if (val) {
-					this.props.model.addTodo(val);
+					this.props.model.addTodo(val,'','');
 					this.setState({newTodo: ''});
 				}
 
 			} else if (event.keyCode == BACKSPACE_KEY) {
 
-				// event.preventDefault();
+				event.preventDefault();
 
 				var val = this.state.newTodo.trim();
 
@@ -70,7 +71,7 @@ var app = app || {};
 		},
 
 		destroy: function (todo) {
-			this.props.model.destroy(todo);
+			this.props.model.destroyTodo(todo);
 		},
 
 		edit: function (todo) {
@@ -92,17 +93,16 @@ var app = app || {};
 			var lists = this.props.model.lists;
 			var projects = this.props.model.projects;
 
-			var shownTodos = todos.filter(function (todo) {
-					if (todo.listId == this.newList) { return true; }
-				}
-			}, this);
+			// var shownTodos = todos.filter(function (todo) {
+			// 		if (todo.listId == this.newList) { return true; }
+			// 	}
+			// }, this);
 
-			var todoItems = shownTodos.map(function (todo) {
+			var todoItems = todos.map(function (todo) { // was shownTodos before
 				return (
 					<TodoItem
 						key={todo.id}
 						todo={todo}
-						onToggle={this.toggle.bind(this, todo)}
 						onDestroy={this.destroy.bind(this, todo)}
 						onEdit={this.edit.bind(this, todo)}
 						editing={this.state.editing === todo.id}
