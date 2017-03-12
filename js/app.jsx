@@ -21,6 +21,7 @@ var app = app || {};
 		getInitialState: function () {
 			return {
 				nowShowing: app.LISTS,
+				editing_list_id: '',
 				editing: null,
 				newTodo: '',
 				newList: '',
@@ -70,7 +71,7 @@ var app = app || {};
 				var val = this.state.newTodo.trim();
 
 				if (val) {
-					this.props.model.addTodo(val,'','');
+					this.props.model.addTodo(val,this.state.editing_list_id,'');
 					this.setState({newTodo: ''});
 				}
 
@@ -101,7 +102,6 @@ var app = app || {};
 
 		edit: function (todo) {
 			this.setState({editing: todo.id});
-			this.setState({editing_what: 'todo'});
 		},
 
 		save: function (todoToSave, text) {
@@ -111,7 +111,7 @@ var app = app || {};
 
 		editList: function (list) {
 			this.setState({editing: list.id});
-			this.setState({editing_what: 'list'});
+			this.setState({editing_list_id: list.id});
 		},
 
 		saveList: function (listToSave, text) {
@@ -130,12 +130,12 @@ var app = app || {};
 			var lists = this.props.model.lists;
 			var projects = this.props.model.projects;
 
-			// var shownTodos = todos.filter(function (todo) {
-			// 		if (todo.listId == this.newList) { return true; }
-			// 	}
-			// }, this);
+			var shownTodos = todos.filter(function (todo) {
+					if (todo.listId == this.state.editing_list_id) { return true; }
+				}
+			, this);
 
-			var todoItems = todos.map(function (todo) { // was shownTodos before
+			var todoItems = shownTodos.map(function (todo) { // was shownTodos before
 				return (
 					<TodoItem
 						key={todo.id}

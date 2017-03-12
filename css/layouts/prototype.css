@@ -123,9 +123,8 @@
     }
 
     .ingredient-item:hover {
-      border-left: 6px solid #1b98f8;
-      /*padding: 0.8em 1em;*/
-      background: #f2f2f4;
+     
+      background: #fafafc;
     }
 
 
