@@ -89,11 +89,16 @@ var app = app || {};
 				<div className={classNames({
 					editing: this.props.editing,
 				})}>
+
+
+
+
 				<div className="ingredient-item  pure-g" onClick={this.handleEdit}>
 					 <div className="pure-u-1-2">
-
+					
 
 		 					<div className="view">
+							 
 		 						<label >
 		 							{this.props.list.title}
 		 						</label>
@@ -111,11 +116,17 @@ var app = app || {};
 					 </div>
 
 					 <div className="pure-u-1-2">
-					 	list item: {classNames({
-							editing: this.props.editing,
-						})}
-
-
+							<span className="actions">
+								<div style={{
+									background: '#f2f2f4',
+									fontSize: 16,
+									fontWeight: 300,
+									padding: 0,
+									float: 'right'
+								}}>
+									<a href="#">[ Open ]</a>
+								</div>
+							</span>
 					 </div>
 				</div>
 </div>
