@@ -90,12 +90,12 @@ var app = app || {};
 					completed: this.props.todo.completed,
 					editing: this.props.editing,
 				})}>
-				<div className="ingredient-item  pure-g">
+				<div className="ingredient-item  pure-g" onClick={this.handleEdit}>
 					 <div className="pure-u-1-2">
 
 
 		 					<div className="view">
-		 						<label onClick={this.handleEdit}>
+		 						<label>
 		 							{this.props.todo.title}
 		 						</label>
 

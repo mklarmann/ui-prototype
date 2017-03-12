@@ -87,15 +87,14 @@ var app = app || {};
 			return (
 
 				<div className={classNames({
-					completed: this.props.list.completed,
 					editing: this.props.editing,
 				})}>
-				<div className="ingredient-item  pure-g">
+				<div className="ingredient-item  pure-g" onClick={this.handleEdit}>
 					 <div className="pure-u-1-2">
 
 
 		 					<div className="view">
-		 						<label onClick={this.handleEdit}>
+		 						<label >
 		 							{this.props.list.title}
 		 						</label>
 
@@ -112,7 +111,9 @@ var app = app || {};
 					 </div>
 
 					 <div className="pure-u-1-2">
-						 800 g
+					 	list item: {classNames({
+							editing: this.props.editing,
+						})}
 
 
 					 </div>

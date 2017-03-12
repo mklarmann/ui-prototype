@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
 
+<!--
+ Open this file in Chrome with:
+ open /Applications/Google\ Chrome.app --args --allow-file-access-from-files
+-->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,17 +150,12 @@
     <div class="calculated-width header-left" style="background: #f2f2f4;position:fixed;top:0px;height:21px;padding:12px; width:240px;">
 
 
-        <div style="font-size:20px;font-weight:300;margin-top:-2px;"><a href="#"> [ Plans ] </a></div>
-
-        <div style="font-size:20px;font-weight:300;float:left; margin-left:80px;margin-top:-23px;height:0px;"><a href="#"> [ Recipes ] </a></div>
-
-
-        <!-- <form class="pure-form calculated-width" style="float:left; margin-left:50px;margin-top:-25px;width:100%;height:0px;">
-           <input  class="calculated-width-2" type="ingredient" placeholder="Search here" style="padding:4px;">
-      </form> -->
+        <form class="pure-form calculated-width" style="float:left; margin-left:0px;margin-top:-5px;width:100%;height:0px;">
+            <input class="search" style="width:160px; height:24px" type="ingredient" placeholder="Search and Add" style="padding:4px;">
+        </form>
 
 
-        <!-- <div style="float:right; margin-top:-24px; margin-right:10px; font-size:20px;font-weight:300; "><a> [ Add New ] </a></div> -->
+        <div class="addNew" style="float:right; margin-top:-3px; margin-right:0px; font-size:20px;font-weight:300; "><a> [ New ] </a></div>
 
 
 
@@ -423,9 +423,12 @@
 
     <div class="footer-left calculated-width" style="background: #f0f8f4;position:fixed;bottom:0px;height:21px;padding:12px;width:240px;">
 
-        <div style="font-size:20px;font-weight:300;"><a href="#" style="color:green;">[ Add New ]</a></div>
-
         <!-- <div  style="float:right; margin-top:-23px; margin-right:10px; font-size:20px;font-weight:300;"><a style="color:green;">[ Add New Plan ]</a></div> -->
+
+        <div style="font-size:20px;font-weight:300;margin-top:-2px;"><a href="#"> [ Plans ] </a></div>
+
+        <div style="font-size:20px;font-weight:300;float:left; margin-left:80px;margin-top:-23px;height:0px;"><a href="#"> [ Recipes ] </a></div>
+
 
     </div>
 
@@ -576,6 +579,8 @@
                      `render` into an HTML-looking format. Since the two models above are
                      unrelated to React, we didn't need those transforms. -->
                 <script type="text/jsx" src="js/todoItem.jsx"></script>
+                <script type="text/jsx" src="js/listItem.jsx"></script>
+                <script type="text/jsx" src="js/projectItem.jsx"></script>
                 <script type="text/jsx" src="js/footer.jsx"></script>
                 <script type="text/jsx" src="js/app.jsx"></script>
 
