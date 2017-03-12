@@ -21,7 +21,8 @@ var app = app || {};
 		getInitialState: function () {
 			return {
 				nowShowing: app.LISTS,
-				editing_list_id: '',
+				editing_list_id: null,
+				editing_list_name: 'no recipe',
 				editing: null,
 				newTodo: '',
 				newList: '',
@@ -56,6 +57,7 @@ var app = app || {};
 				if (val) {
 					this.props.model.addList(val, '');
 					this.setState({ newList: '' });
+
 				}
 
 			} else {
@@ -112,6 +114,7 @@ var app = app || {};
 		editList: function (list) {
 			this.setState({ editing: list.id });
 			this.setState({ editing_list_id: list.id });
+			this.setState({ editing_list_name: list.title });
 		},
 
 		saveList: function (listToSave, text) {
@@ -132,8 +135,7 @@ var app = app || {};
 
 			var shownTodos = todos.filter(function (todo) {
 				if (todo.listId == this.state.editing_list_id) { return true; }
-			}
-				, this);
+			}, this);
 
 			var todoItems = shownTodos.map(function (todo) { // was shownTodos before
 				return (
@@ -190,7 +192,7 @@ var app = app || {};
 						height: 0
 					}}>
 
-						<input className="new-list" style={{ width: 160,height: 24	}} placeholder="Add new list" value={this.state.newList} onKeyDown={this.handleNewListKeyDown} onChange={this.handleListChange} autoFocus={true} />
+						<input className="new-list" style={{ width: 160,height: 24	}} placeholder="Add new recipe" value={this.state.newList} onKeyDown={this.handleNewListKeyDown} onChange={this.handleListChange} autoFocus={true} />
 
 					</form> < div className="addNew" style={{ float: 'right', marginTop: '-3px', marginRight: 0, fontSize: 20, fontWeight: 300 }} > <a>[ New ]</a> </div>
 					</div > <div className="calculated-height calculated-width mydiv" style={{
@@ -214,7 +216,6 @@ var app = app || {};
 								</div>
 								
 								{listsMain}
-								
 
 							</div>
 						</div>
@@ -235,10 +236,12 @@ var app = app || {};
 						</div>
 
 						<div className="preview p-content" style={{ background: '#f3f7f2', height: 1000, padding: 12, width: '-webkit-calc(100% - 24px)', minWidth: 720 }}>
-							<div id="recipe" style={{ padding: '20px 0px 20px 140px', background: '#fff0fc', marginRight: 16 }}>
+							
+					
+							<div id="recipe" className={classNames({ no_display: !this.state.editing_list_id})} style={{ padding: '20px 0px 20px 140px', background: '#fff0fc', marginRight: 16 }}>
 								<div id="recipe-info">
 									<div id="icon" style={{ width: 80 }}>
-										<img className="pure-img" style={{ padding: 4, height: 80, float: 'left', marginLeft: '-110px', marginTop: '-20px', background: '#fff', borderRadius: 60, border: '1px solid #ddd' }} src="./img/spoon-fork.png" alt="html5" /> </div> < h1 > Pumpkin Salad </h1>
+										<img className="pure-img" style={{ padding: 4, height: 80, float: 'left', marginLeft: '-110px', marginTop: '-20px', background: '#fff', borderRadius: 60, border: '1px solid #ddd' }} src="./img/spoon-fork.png" alt="html5" /> </div> < h1 > {this.state.editing_list_name} </h1>
 									<div id="image">
 										<img className="pure-img" style={{ height: 300, float: 'right', marginTop: '-200px', marginRight: 20, marginBottom: 20 }} src="./img/pumpkin-salad.jpeg" alt="html5" /> </div> < div className="label" > Recipe </div>
 									<div className="label">Nutrition</div> <div className="label">CO2-value</div> </div>
@@ -257,7 +260,6 @@ var app = app || {};
 										<div class="pure-u-1-2">
 											<input className="new-todo" placeholder="Add new ingredient" value={this.state.newTodo} onKeyDown={this.handleNewTodoKeyDown} onChange={this.handleTodoChange} autoFocus={true} />
 										</div>
-
 									</div>
 
 								</div>
