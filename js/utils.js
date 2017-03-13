@@ -31,7 +31,8 @@ var app = app || {};
 			}
 
 			var store = localStorage.getItem(namespace);
-			return (store && JSON.parse(store)) || [];
+			var return_code = (store && JSON.parse(store)) || {};
+			return return_code;
 		},
 
 		extend: function () {
