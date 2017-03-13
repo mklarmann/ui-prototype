@@ -45,7 +45,7 @@ var app = app || {};
 	app.TodoModel.prototype.addList = function (title,projectId) {
 		this.store.lists = this.store.lists.concat({
 			id: Utils.uuid(),
-			projectId: projectId,
+			projectId: [projectId],
 			title: title
 		});
 
@@ -55,8 +55,8 @@ var app = app || {};
 	app.TodoModel.prototype.addTodo = function (title,listId,projectId) {
 		this.store.todos = this.store.todos.concat({
 			id: Utils.uuid(),
-			listId: listId,
-			projectId: projectId,
+			listId: [listId],
+			projectId: [projectId],
 			title: title,
 			completed: false
 		});

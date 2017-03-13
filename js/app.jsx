@@ -132,10 +132,14 @@ var app = app || {};
 			var projects = this.props.model.store.projects;
 
 			var shownTodos = todos.filter(function (todo) {
-				if (todo.listId == this.state.editing_list_id) { return true; }
+				for(var i = 0; i < todo.listId.length; i++) {
+					if(todo.listId[i] === this.state.editing_list_id) {
+						return true;
+					}
+				}
 			}, this);
 
-			var todoItems = shownTodos.map(function (todo) { // was shownTodos before
+			var todoItems = shownTodos.map(function (todo) { 
 				return (
 					<TodoItem
 						key={todo.id}
