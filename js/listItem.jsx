@@ -112,7 +112,7 @@ var app = app || {};
 		 					</div>
 		 					<input
 		 						ref="editField"
-		 						className="edit"
+		 						className="edit edit-list"
 		 						value={this.state.editText}
 		 						onBlur={this.handleSubmit}
 		 						onChange={this.handleChange}

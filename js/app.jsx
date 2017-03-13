@@ -231,7 +231,7 @@ var app = app || {};
 						<div style={{ fontSize: 20, fontWeight: 300, float: 'left', marginLeft: 80, marginTop: '-23px', height: 0 }}><a href="#"> [ Recipes ] </a> </div> 
 					</div>
 
-					<div id="element" style={{ overflow: 'auto', height: '-webkit-calc(100% - 50px)', width: '-webkit-calc(100% - 290px)', minWidth: 600, marginTop: 50, background: '#f202f4' }}>
+					<div id="element" style={{ overflow: 'auto', height: 700, width: '-webkit-calc(100% - 290px)', minWidth: 600, marginTop: 50, background: '#f202f4' }}>
 						
 						<div className="preview" style={{ background: '#f2f2f4', fontSize: 20, fontWeight: 300, padding: 12, position: 'fixed', top: '-2px' }}>
 							<a href="#"> [ Print ] </a>
@@ -243,7 +243,8 @@ var app = app || {};
 							<div id="recipe" className={classNames({ no_display: !this.state.editing_list_id})} style={{ padding: '20px 0px 20px 140px', background: '#fff0fc', marginRight: 16 }}>
 								<div id="recipe-info">
 									<div id="icon" style={{ width: 80 }}>
-										<img className="pure-img" style={{ padding: 4, height: 80, float: 'left', marginLeft: '-110px', marginTop: '-20px', background: '#fff', borderRadius: 60, border: '1px solid #ddd' }} src="./img/spoon-fork.png" alt="html5" /> </div> < h1 > {this.state.editing_list_name} </h1>
+										<img className="pure-img" style={{ padding: 4, height: 80, float: 'left', marginLeft: '-110px', marginTop: '-20px', background: '#fff', borderRadius: 60, border: '1px solid #ddd' }} src="./img/spoon-fork.png" alt="html5" /> </div> 
+										< h1 > {this.state.editing_list_name} </h1>
 									<div id="image">
 										<img className="pure-img" style={{ height: 300, float: 'right', marginTop: '-200px', marginRight: 20, marginBottom: 20 }} src="./img/pumpkin-salad.jpeg" alt="html5" /> </div> < div className="label" > Recipe </div>
 									<div className="label">Nutrition</div> <div className="label">CO2-value</div> </div>
