@@ -92,7 +92,7 @@ var app = app || {};
 				})}>
 				<div className="ingredient-item  pure-g">
 					 <div className="pure-u-1-2">
-
+						<button className="destroy" onClick={this.props.onDestroy}>delete</button>	
 
 		 					<div className="view">
 		 						<label onClick={this.handleEdit}>
@@ -108,7 +108,7 @@ var app = app || {};
 		 						onChange={this.handleChange}
 		 						onKeyDown={this.handleKeyDown}
 		 					/>
-
+							 	
 					 </div>
 
 					 <div className="pure-u-1-2">

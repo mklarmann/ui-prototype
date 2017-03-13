@@ -82,6 +82,10 @@ var app = app || {};
 				node.setSelectionRange(node.value.length, node.value.length);
 			}
 		},
+		destroy: function() {
+			// save the item without the id of this list
+			this.props.onDestroy()
+		},
 
 		render: function () {
 			return (
@@ -112,7 +116,7 @@ var app = app || {};
 					 </div>
 
 					 <div className="pure-u-1-2">
-						 800 g
+						 800 g <button className="destroy" onClick={this.destroy}>delete</button>
 
 
 					 </div>

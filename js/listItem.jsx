@@ -83,6 +83,12 @@ var app = app || {};
 			}
 		},
 
+		destroy: function() {
+			this.props.onDestroy()
+			//make display dissapear again
+
+		},
+
 		render: function () {
 			return (
 
@@ -124,7 +130,7 @@ var app = app || {};
 									padding: 0,
 									float: 'right'
 								}}>
-									<a href="#">[ Open ]</a>
+									<button className="destroy" onClick={this.destroy}>X</button> <a href="#">[ Open ]</a>
 								</div>
 							</span>
 					 </div>
