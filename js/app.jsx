@@ -79,8 +79,6 @@ var app = app || {};
 
 			} else if (event.keyCode == BACKSPACE_KEY) {
 
-				event.preventDefault();
-
 				var val = this.state.newTodo.trim();
 
 				if (val == '') {
