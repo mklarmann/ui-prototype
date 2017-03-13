@@ -288,7 +288,7 @@ var app = app || {};
 		}
 	});
 
-	var model = new app.TodoModel('eaternity-react-2');
+	var model = new app.TodoModel('eaternity-react-prototype');
 
 	function render() {
 		React.render(
