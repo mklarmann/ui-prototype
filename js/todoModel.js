@@ -16,10 +16,12 @@ var app = app || {};
 	app.TodoModel = function (key) {
 		this.key = key;
 		this.store = Utils.store(key);
-		this.projects =  this.store.projects || [];
-		this.lists = this.store.lists || [];
-		this.todos =  this.store.todos || [];
 		this.onChanges = [];
+
+		this.store.projects =  this.store.projects || [];
+		this.store.lists = this.store.lists || [];
+		this.store.todos =  this.store.todos || [];
+		
 	};
 
 	app.TodoModel.prototype.subscribe = function (onChange) {
@@ -27,12 +29,12 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.inform = function () {
-		Utils.store(this.key, this.projects);
+		Utils.store(this.key, this.store);
 		this.onChanges.forEach(function (cb) { cb(); });
 	};
 
 	app.TodoModel.prototype.addProject = function (title) {
-		this.projects = this.projects.concat({
+		this.store.projects = this.store.projects.concat({
 			id: Utils.uuid(),
 			title: title
 		});
@@ -41,7 +43,7 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.addList = function (title,projectId) {
-		this.lists = this.lists.concat({
+		this.store.lists = this.store.lists.concat({
 			id: Utils.uuid(),
 			projectId: projectId,
 			title: title
@@ -51,7 +53,7 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.addTodo = function (title,listId,projectId) {
-		this.todos = this.todos.concat({
+		this.store.todos = this.store.todos.concat({
 			id: Utils.uuid(),
 			listId: listId,
 			projectId: projectId,
@@ -63,7 +65,7 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.destroyTodo = function (todo) {
-		this.todos = this.todos.filter(function (candidate) {
+		this.store.todos = this.store.todos.filter(function (candidate) {
 			return candidate !== todo;
 		});
 
@@ -71,7 +73,7 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.destroyList = function (list) {
-		this.lists = this.lists.filter(function (candidate) {
+		this.store.lists = this.store.lists.filter(function (candidate) {
 			return candidate !== list;
 		});
 
@@ -79,7 +81,7 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.destroyProject = function (project) {
-		this.projects = this.projects.filter(function (candidate) {
+		this.store.projects = this.store.projects.filter(function (candidate) {
 			return candidate !== project;
 		});
 
@@ -87,7 +89,7 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.saveTodo = function (todoToSave, text) {
-		this.todos = this.todos.map(function (todo) {
+		this.store.todos = this.store.todos.map(function (todo) {
 			return todo !== todoToSave ? todo : Utils.extend({}, todo, {title: text});
 		});
 
@@ -95,7 +97,7 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.saveList = function (listToSave, text) {
-		this.lists = this.lists.map(function (list) {
+		this.store.lists = this.store.lists.map(function (list) {
 			return list !== listToSave ? list : Utils.extend({}, list, {title: text});
 		});
 
@@ -103,7 +105,7 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.saveProject = function (projectToSave, text) {
-		this.projects = this.projects.map(function (project) {
+		this.store.projects = this.store.projects.map(function (project) {
 			return project !== projectToSave ? project : Utils.extend({}, project, {title: text});
 		});
 

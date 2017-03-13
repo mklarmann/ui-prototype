@@ -129,9 +129,9 @@ var app = app || {};
 		render: function () {
 			var todosMain;
 			var listsMain
-			var todos = this.props.model.todos;
-			var lists = this.props.model.lists;
-			var projects = this.props.model.projects;
+			var todos = this.props.model.store.todos;
+			var lists = this.props.model.store.lists;
+			var projects = this.props.model.store.projects;
 
 			var shownTodos = todos.filter(function (todo) {
 				if (todo.listId == this.state.editing_list_id) { return true; }
@@ -288,7 +288,7 @@ var app = app || {};
 		}
 	});
 
-	var model = new app.TodoModel('eaternity-react');
+	var model = new app.TodoModel('eaternity-react-prototype');
 
 	function render() {
 		React.render(
